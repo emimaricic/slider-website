@@ -1,0 +1,101 @@
+$base-color: rgb(0, 49, 83);
+$text-color: rgb(120, 120, 120);
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin image-style {
+  height: 200px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+@mixin button-style {
+  height: 50px;
+  width: 50px;
+  border: 1px solid $base-color;
+  border-radius: 6px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+@mixin hover {
+  border: 1px solid $base-color;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main {
+  @include row;
+  justify-content: center;
+  width: auto;
+  min-width: 200px;
+}
+
+.text-area {
+  width: 300px;
+  align-self: center;
+}
+
+.image-slider {
+  width: auto;
+  padding-right: auto;
+  overflow: hidden;
+  margin-right: 10px;
+  justify-content: center;
+  align-self: center;
+}
+
+.first_row {
+  @include row;
+  margin-left: -260px;
+}
+.second_row {
+  @include row;
+  margin-top: 10px;
+  margin-left: -260px;
+}
+
+img {
+  @include image-style;
+}
+
+h1 {
+  color: $base-color;
+}
+h3 {
+  color: $text-color;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.next {
+  @include button-style;
+  background-image: url("../Assets/arrow-gray-right.png");
+}
+.next:hover {
+  background: url("../Assets/arrow-blue-right.png");
+  @include hover;
+}
+
+.prev {
+  @include button-style;
+  background-image: url("../Assets/arrow-gray-left.png");
+}
+.prev:hover {
+  background: url("../Assets/arrow-blue-left.png");
+  @include hover;
+}
